@@ -135,13 +135,230 @@ a {
   width: 400px;
   animation: fadeInUp 1s;
 }
-.html {
+.html1 {
+  background: #000000;
+  text-align: left;
+  color: white;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  animation: fadeInUp 1s;
+     
+}
+
+.css {
+   background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+    
+}
+
+.js {
+    background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+}
+.gd {
   background: #000000;
   margin: 30px auto;
   max-width: 500px;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+}
+
+H4 {
+    color: #eaffea;
+   }
+
+.rr {
+    color: #ff9d00;
+}
+.cc{
+background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0,75,100,50);
+  animation: fadeInUp 1s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #000000, #000000);
+  text-align: center;
+   color: #00ffff;
+  text-shadow: 2px 2px 5px #00ffff;
+
+ }
+
+.header {
+  padding: 1px 0;
+  background: #040404; 
+  color: #00ffea;
+  animation: fadeInDown 1s;
+  font-size: 25px;
+}
+
+.image-container {
+  margin: 20px 0;
+  text-shadow:
+    -1px -1px 0 green,
+     1px -1px 0 green,
+    -1px  1px 0 green,
+     1px  1px 0 green;
+}
+
+.profile {
+  width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,200,175,100);
+  animation: zoomIn 1.5s;
+  width: 150px;
+  animation: floatUpDown 2s ease-in-out infinite;
+}
+
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.link{
+    align: left;
+    width: 150px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,200,175,100);
+  animation: zoomIn 1.5s;
+}
+
+.profiles {
+      align: left;
+    width: 150px;
+  border-radius: 150%;
+  box-shadow: 0 0 10px rgba(0,200,175,100);
+  animation: zoomIn 1.5s; 
+}
+.buttons {
+  margin: 20px 0;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #0081ff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #00ffea;
+}
+
+.bottom-section {
+  background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+}
+
+.dd {
+    text-align:left;
+}
+.ff {
+    color: white;
+    font-size: 15px;
+}
+
+a {
+    color: white;
+}
+
+.bot {
+    background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+}
+
+.grid {
+    background: #000000;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,200,180,100);
+  animation: fadeInUp 1s;
+}
+.grid-image {
+  background: #000000;
+  margin: 30px auto;
+  height: 250px;
+  width: 450px;
+  animation: fadeInUp 1s;
+}
+
+.bot-image {
+    background: #000000;
+  margin: 30px auto;
+  height: 250px;
+  width: 400px;
+  animation: fadeInUp 1s;
+}
+.html1 {
+  background: #000000;
+  text-align: left;
+  color: white;
+  margin: 30px auto;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
   animation: fadeInUp 1s;
      
 }
