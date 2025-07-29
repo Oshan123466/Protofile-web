@@ -67,7 +67,7 @@ body {
 .buttons button {
   padding: 10px 20px;
   margin: 10px;
-  background: #0081ff;
+  background: #ff009d;
   border: none;
   color: white;
   font-size: 16px;
@@ -76,7 +76,7 @@ body {
 }
 
 .buttons button:hover {
-  background: #00ffea;
+  background: #ff00f1;
 }
 
 .bottom-section {
