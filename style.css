@@ -17,8 +17,17 @@ body {
   font-size: 25px;
 }
 .xxx {
-  text-align: center;
-  }
+    animation: typing 2s steps(1s),blink 0.5s;
+}
+
+@keyframes typing {
+    from(width:0);
+}
+
+@keyframes blink {
+    50%{ border-color: transparent };
+}
+
 
 .image-container {
   margin: 20px 0;
