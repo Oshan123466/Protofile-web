@@ -1,229 +1,191 @@
+/* --- Root Variables for Dark Theme --- */
+:root {
+    --bg-color: #121212; /* Very dark grey background */
+    --text-color: #f0f0f0; /* Light text color */
+    --primary-color: #00bcd4; /* Cyan accent color */
+    --secondary-color: #333333; /* Darker element background */
+    --padding-base: 20px;
+}
+
+/* --- Base Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #000000, #000000);
-  text-align: center;
-   color: #ff00f1;
-  text-shadow: 2px 2px 5px #ff009d;
-
- }
-
-.header {
-  padding: 1px 0;
-  background: #040404; 
-  color: #ff00f1;
-  animation: fadeInDown 1s;
-  font-size: 25px;
-}
-.xxx {
-    animation: typing 2s steps(1s),blink 0.5s;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-@keyframes typing {
-    from(width:0);
+/* --- Header & Navigation --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--padding-base) 5%;
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-@keyframes blink {
-    50%{ border-color: transparent };
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
-
-.image-container {
-  margin: 20px 0;
-  text-shadow:
-    -1px -1px 0 green,
-     1px -1px 0 green,
-    -1px  1px 0 green,
-     1px  1px 0 green;
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: var(--padding-base);
+    transition: color 0.3s;
 }
 
-.profile {
-  width: 150px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(200,0,175,100);
-  animation: zoomIn 1.5s;
-  width: 150px;
-  animation: floatUpDown 2s ease-in-out infinite;
+nav a:hover {
+    color: var(--primary-color);
 }
 
+/* --- Sections Styling --- */
+section {
+    padding: 100px 5%;
+    min-height: 80vh;
+}
 
-@keyframes floatUpDown {
-  0%, 100% {
+h1, h2 {
+    margin-bottom: var(--padding-base);
+    color: var(--primary-color);
+}
+
+/* --- Animated Button Style & Hover Animation --- */
+.animated-button {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+    margin-top: var(--padding-base);
+}
+
+.animated-button:hover {
+    /* Subtle 'pop' effect on hover */
+    transform: scale(1.05); 
+    background-color: #00a4b7;
+}
+
+.primary-btn {
+    background-color: #ff5722; /* Different color for the store button */
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.4);
+}
+
+.primary-btn:hover {
+    transform: scale(1.05) rotate(-1deg); /* Slight rotation for a playful effect */
+    background-color: #e64a19;
+}
+
+/* --- Skills Section Specifics --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--padding-base);
+    margin-top: var(--padding-base);
+}
+
+.skill-item {
+    background-color: var(--secondary-color);
+    padding: var(--padding-base);
+    text-align: center;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.skill-item:hover {
+    background-color: #444444; /* Lighter on hover */
+    transform: translateY(-5px); /* Lift effect */
+}
+
+/* --- Store Section Specifics --- */
+.store-items {
+    display: flex;
+    gap: var(--padding-base);
+    margin-bottom: var(--padding-base);
+}
+
+.item {
+    background-color: var(--secondary-color);
+    padding: var(--padding-base);
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: var(--padding-base);
+    background-color: var(--secondary-color);
+    font-size: 0.8em;
+    border-top: 1px solid #222;
+}
+
+/* --- "We Animation" / Scroll-Reveal Animation CSS --- */
+
+/* Initial state: elements are hidden/out of position */
+.section-animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Final state: visible and in original position */
+.section-animate.visible {
+    opacity: 1;
     transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
 }
 
-.link{
-    align: left;
-    width: 150px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(200,0,175,100);
-  animation: zoomIn 1.5s;
+/* The @keyframes rule defines the animation's behavior. 
+   We name it 'pulse-scale' 
+*/
+@keyframes pulse-scale {
+    0% {
+        /* Start: Normal size */
+        transform: scale(1); 
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+    }
+    50% {
+        /* Halfway: Slightly larger */
+        transform: scale(1.05); 
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Added an orange glow/shadow */
+    }
+    100% {
+        /* End: Back to normal size (for smooth loop) */
+        transform: scale(1); 
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.4);
+    }
 }
 
-.profiles {
-      align: left;
-    width: 150px;
-  border-radius: 150%;
-  box-shadow: 0 0 10px rgba(200,0,175,100);
-  animation: zoomIn 1.5s; 
-}
-.buttons {
-  margin: 20px 0;
-}
-
-.buttons button {
-  padding: 10px 20px;
-  margin: 10px;
-  background: #ff009d;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.buttons button:hover {
-  background: #ff00f1;
-}
-
-.bottom-section {
-  background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-
-.dd {
-    text-align:left;
-}
-.ff {
-    color: white;
-    font-size: 15px;
-}
-
-a {
-    color: white;
-}
-
-.bot {
-    background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-
-.grid {
-    background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-.grid-image {
-  background: #000000;
-  margin: 30px auto;
-  height: 250px;
-  width: 450px;
-  animation: fadeInUp 1s;
-}
-
-.bot-image {
-    background: #000000;
-  margin: 30px auto;
-  height: 250px;
-  width: 400px;
-  animation: fadeInUp 1s;
-}
-.html1 {
-  background: #000000;
-  text-align: left;
-  color: white;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  animation: fadeInUp 1s;
-     
-}
-
-.css {
-   background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
+/* Apply the animation to the image with the class 'animated-image' */
+.animated-image {
+    /* Set basic styles for the image */
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    display: block; /* Helps with centering/layout */
+    margin: 50px auto; /* Centers the image */
+    border-radius: 10px; /* Optional: adds rounded corners */
     
-}
-
-.js {
-    background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-.gd {
-  background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-
-H4 {
-    color: #eaffea;
-   }
-
-.rr {
-    color: #ff9d00;
-}
-.cc{
-background: #000000;
-  margin: 30px auto;
-  max-width: 500px;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: left;
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(200,0,175,100);
-  animation: fadeInUp 1s;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.5); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
+    /* THE ANIMATION PROPERTIES */
+    animation-name: pulse-scale; 
+    animation-duration: 2s; /* How long one cycle of the animation takes */
+    animation-timing-function: ease-in-out; /* Makes it start and stop smoothly */
+    animation-iteration-count: infinite; /* Makes the animation loop forever */
+      }
